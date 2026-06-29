@@ -1,26 +1,13 @@
----
-name: example-skill
-description: Describe cuándo debe cargarse esta skill.
----
+# Skill Name
 
-# Example Skill
+## When to use
 
-## Objetivo
+Describe when this skill should be activated.
 
-Describe el objetivo de la skill.
+## Instructions
 
-## Cuándo usar
+Describe how the AI should behave.
 
-- Caso 1
-- Caso 2
+## Output
 
-## Instrucciones
-
-1. Analizar contexto.
-2. Proponer plan.
-3. Ejecutar con cambios mínimos.
-4. Verificar resultado.
-
-## Salida esperada
-
-Describe el formato de entrega.
+Describe expected output style.

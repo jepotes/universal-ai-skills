@@ -1,25 +1,48 @@
-# AGENTS.md
+# Universal AI Skills — Agent Instructions
 
-Este proyecto usa **Universal AI Skills Hub**.
+This project uses Universal AI Skills.
 
-## Qué debe hacer cualquier agente
+Before working, every AI assistant must:
 
-1. Leer `.ai/project.json` antes de trabajar.
-2. Revisar `registry.json` para identificar las skills disponibles.
-3. Cargar solo las skills necesarias para la tarea.
-4. No copiar contenido externo sin revisar licencia.
-5. Hacer cambios simples, verificables y bien justificados.
-6. Para features nuevas, usar flujo: objetivo → alcance → plan → tareas → implementación → verificación.
+1. Read `.ai/project.json`.
+2. Read `registry.json` and `sources.json`.
+3. Load every skill declared in `.ai/project.json`.
+4. If a pack is declared, load all skills listed in that pack.
+5. Use the corresponding adapter guidance when available.
+6. Prefer the project-local `./ai-skills` folder when this repo is installed inside another project.
 
-## Carga recomendada
+## Skill loading order
 
-- Código general: `core.karpathy-principles`, `methodology.ponytail`.
-- Feature o proyecto nuevo: `methodology.spec-kit`, `methodology.gstack`.
-- UI/UX, landing, frontend visual o design system: `design.ui-ux-pro-max`.
-- QA, seguridad, review o shipping: `methodology.gstack`.
-- Web/automatizaciones: `vercel.agent-skills` cuando aplique.
-- WhatsApp, n8n, webhooks o API: `integrations.openwa` solo como integración técnica.
+1. Core project instructions.
+2. Packs.
+3. Individual skills.
+4. Tool-specific adapter instructions.
+5. User request.
 
-## Regla principal
+## Behavior
 
-Usar las skills para mejorar el trabajo, no para complicarlo. Si una skill agrega complejidad innecesaria, aplicar la solución más simple que cumpla el objetivo.
+- Do not invent skills that are not present.
+- Do not copy external repository content without respecting license and attribution.
+- When a requested capability is missing, suggest creating or adding a skill.
+- Keep responses practical and action-oriented.
+- Prefer simple installation and repeatable workflows.
+
+## Active skill roots
+
+When this repo is used directly:
+
+```text
+./skills
+./packs
+./registry.json
+./sources.json
+```
+
+When installed inside another project:
+
+```text
+./ai-skills/skills
+./ai-skills/packs
+./ai-skills/registry.json
+./ai-skills/sources.json
+```

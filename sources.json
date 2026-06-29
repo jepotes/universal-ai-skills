@@ -1,79 +1,60 @@
 {
-  "version": "0.1.0",
-  "updated_by": "manual",
   "sources": [
     {
-      "id": "andrej-karpathy-skills",
+      "id": "karpathy-skills",
       "name": "Andrej Karpathy Skills",
-      "url": "https://github.com/multica-ai/andrej-karpathy-skills.git",
-      "path": "external/andrej-karpathy-skills",
-      "kind": "guidelines",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
+      "repository": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+      "target": "external/andrej-karpathy-skills",
+      "type": "external-skill-pack",
+      "enabled": true
     },
     {
       "id": "ponytail",
       "name": "Ponytail",
-      "url": "https://github.com/DietrichGebert/ponytail.git",
-      "path": "external/ponytail",
-      "kind": "agent_skill_pack",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
+      "repository": "https://github.com/DietrichGebert/ponytail.git",
+      "target": "external/ponytail",
+      "type": "external-skill-pack",
+      "enabled": true
     },
     {
-      "id": "vercel-agent-skills",
+      "id": "agent-skills",
       "name": "Vercel Agent Skills",
-      "url": "https://github.com/vercel-labs/agent-skills.git",
-      "path": "external/agent-skills",
-      "kind": "agent_skills_collection",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
+      "repository": "https://github.com/vercel-labs/agent-skills.git",
+      "target": "external/agent-skills",
+      "type": "external-skill-pack",
+      "enabled": true
     },
     {
       "id": "gstack",
       "name": "GStack",
-      "url": "https://github.com/garrytan/gstack.git",
-      "path": "external/gstack",
-      "kind": "methodology_skill_pack",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
+      "repository": "https://github.com/garrytan/gstack.git",
+      "target": "external/gstack",
+      "type": "methodology-pack",
+      "enabled": true
     },
     {
       "id": "spec-kit",
       "name": "GitHub Spec Kit",
-      "url": "https://github.com/github/spec-kit.git",
-      "path": "external/spec-kit",
-      "kind": "spec_driven_development",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
-    },
-    {
-      "id": "openwa",
-      "name": "OpenWA",
-      "url": "https://github.com/rmyndharis/OpenWA.git",
-      "path": "external/openwa",
-      "kind": "integration",
-      "default_branch": "main",
-      "integration_mode": "git_submodule"
+      "repository": "https://github.com/github/spec-kit.git",
+      "target": "external/spec-kit",
+      "type": "spec-driven-development",
+      "enabled": true
     },
     {
       "id": "ui-ux-pro-max",
       "name": "UI UX Pro Max Skill",
-      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
-      "path": "external/ui-ux-pro-max",
-      "kind": "design_skill_pack",
-      "default_branch": "main",
-      "integration_mode": "git_submodule",
-      "category": "design",
-      "adapters": [
-        "claude",
-        "cursor",
-        "codex",
-        "gemini",
-        "copilot",
-        "factory",
-        "generic"
-      ]
+      "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+      "target": "external/ui-ux-pro-max",
+      "type": "design-skill",
+      "enabled": true
+    },
+    {
+      "id": "openwa",
+      "name": "OpenWA",
+      "repository": "https://github.com/rmyndharis/OpenWA.git",
+      "target": "external/openwa",
+      "type": "integration",
+      "enabled": true
     }
   ]
 }

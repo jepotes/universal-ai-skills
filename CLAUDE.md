@@ -1,24 +1,34 @@
-# CLAUDE.md
+# Claude Code Instructions
 
-Este proyecto usa **Universal AI Skills Hub**.
+This project uses Universal AI Skills.
 
-## Al abrir el proyecto
+Before answering or coding:
 
-1. Leer `.ai/project.json`.
-2. Revisar `registry.json`.
-3. Identificar las skills declaradas para el proyecto.
-4. Aplicar solo las skills relevantes para la tarea actual.
+1. Read `.ai/project.json`.
+2. Locate the skills repository:
+   - Use `./ai-skills` if it exists.
+   - Otherwise use the current repository root.
+3. Read `registry.json` and `sources.json`.
+4. Load all packs and skills declared in `.ai/project.json`.
+5. Apply the loaded skills before making implementation decisions.
 
-## Skills principales
+## Claude-specific behavior
 
-- `core.karpathy-principles`: simplicidad, claridad, planificación y revisión.
-- `methodology.ponytail`: productividad y reducción de complejidad.
-- `methodology.spec-kit`: especificaciones, planes y tareas antes de implementar.
-- `methodology.gstack`: QA, seguridad, review, producto y shipping.
-- `vercel.agent-skills`: skills compatibles con Agent Skills.
-- `design.ui-ux-pro-max`: UI/UX, design systems, branding, accesibilidad, React, Next.js, Tailwind y frontend visual.
-- `integrations.openwa`: WhatsApp, REST API, webhooks, Docker o n8n cuando aplique.
+- Treat each loaded `skill.md` as persistent project instruction.
+- Use `metadata.json` to understand skill purpose, category, tags and adapters.
+- If multiple skills apply, combine them in this order: core, methodology, design, frontend, backend, automation, marketing, business, testing.
+- Keep changes simple, auditable and easy to maintain.
 
-## Regla de trabajo
+## When working in a new project
 
-No sobreingenierizar. Pensar antes de modificar. Hacer cambios pequeños y verificables. Respetar licencias de repos externos.
+If the user asks to initialize Universal AI Skills, run the installer appropriate to the OS or create the following files manually:
+
+```text
+.ai/project.json
+CLAUDE.md
+AGENTS.md
+CODEX.md
+GEMINI.md
+WINDSURF.md
+.cursor/rules/universal-ai-skills.mdc
+```

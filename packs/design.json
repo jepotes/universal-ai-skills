@@ -1,9 +1,6 @@
 {
-  "id": "pack.design",
-  "name": "Design & Frontend Visual",
-  "skills": [
-    "design.ui-ux-pro-max",
-    "vercel.agent-skills",
-    "core.karpathy-principles"
-  ]
+  "id": "design",
+  "name": "Design Pack",
+  "description": "UI/UX, accessibility and design-system oriented skills.",
+  "skills": ["design.ui-ux-pro-max"]
 }

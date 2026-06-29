@@ -1,0 +1,9 @@
+---
+description: Universal AI Skills project rules
+alwaysApply: true
+---
+
+# Universal AI Skills
+
+Read `.ai/project.json`, then load the declared packs and skills from `./ai-skills` when available.
+Use `AGENTS.md` as the universal behavior contract.

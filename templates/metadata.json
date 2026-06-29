@@ -1,10 +1,10 @@
 {
   "id": "category.skill-name",
   "name": "Skill Name",
-  "version": "0.1.0",
-  "description": "Descripción breve.",
+  "version": "1.0.0",
+  "category": "category",
+  "description": "What this skill does.",
   "entry": "skill.md",
   "tags": [],
-  "adapters": ["claude", "codex", "cursor", "generic"],
-  "license": "SEE_SOURCE_LICENSE"
+  "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
 }

@@ -1,5 +1,7 @@
-# UI UX Pro Max Adapter
+# UI UX Pro Max
 
-Adaptador local para registrar `nextlevelbuilder/ui-ux-pro-max-skill` dentro del Universal AI Skills Registry.
+A normalized design skill for Universal AI Skills.
 
-Fuente externa esperada: `external/ui-ux-pro-max`.
+Source reference: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
+
+This local skill is a lightweight adapter entry. Keep the original repository in `external/ui-ux-pro-max` when using the full source.

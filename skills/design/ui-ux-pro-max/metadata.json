@@ -1,17 +1,11 @@
 {
   "id": "design.ui-ux-pro-max",
   "name": "UI UX Pro Max",
-  "source_id": "ui-ux-pro-max",
-  "entry": "external/ui-ux-pro-max",
-  "tags": [
-    "ui",
-    "ux",
-    "design-system",
-    "frontend",
-    "tailwind",
-    "react",
-    "nextjs",
-    "accessibility",
-    "branding"
-  ]
+  "version": "1.0.0",
+  "category": "design",
+  "description": "Advanced UI/UX guidance for modern digital products, design systems, accessibility and frontend implementation.",
+  "entry": "skill.md",
+  "tags": ["ui", "ux", "design-system", "accessibility", "frontend"],
+  "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"],
+  "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git"
 }

@@ -1,30 +1,23 @@
-#!/usr/bin/env python3
 import json
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
-registry = json.loads((root / "registry.json").read_text(encoding="utf-8"))
-sources = json.loads((root / "sources.json").read_text(encoding="utf-8"))
-source_ids = {s["id"] for s in sources["sources"]}
-
+ROOT = Path(__file__).resolve().parents[1]
+registry = json.loads((ROOT / "registry.json").read_text(encoding="utf-8"))
 errors = []
-ids = set()
-for skill in registry.get("skills", []):
-    sid = skill.get("id")
-    if not sid:
-        errors.append("Skill without id")
-    elif sid in ids:
-        errors.append(f"Duplicate skill id: {sid}")
-    ids.add(sid)
 
-    source_id = skill.get("source_id")
-    if source_id not in source_ids:
-        errors.append(f"Skill {sid} references missing source_id: {source_id}")
+for skill in registry.get("skills", []):
+    path = ROOT / skill["path"]
+    if not path.exists():
+        errors.append(f"Missing skill path: {skill['id']} -> {path}")
+    if not (path / skill.get("entry", "skill.md")).exists():
+        errors.append(f"Missing entry file for {skill['id']}")
+    if not (path / skill.get("metadata", "metadata.json")).exists():
+        errors.append(f"Missing metadata file for {skill['id']}")
 
 if errors:
     print("Registry validation failed:")
-    for e in errors:
-        print(f"- {e}")
+    for error in errors:
+        print(f"- {error}")
     raise SystemExit(1)
 
-print(f"Registry OK: {len(ids)} skills, {len(source_ids)} sources")
+print("Registry validation passed.")

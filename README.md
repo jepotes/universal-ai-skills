@@ -1,159 +1,150 @@
-# Universal AI Skills Hub
+# Universal AI Skills
 
-**Una biblioteca simple para instalar y reutilizar skills de IA en cualquier proyecto.**
+**Install once. Use with any AI.**
 
-Sirve para trabajar con Claude Code, Codex, Cursor, Gemini, Copilot, Windsurf, Aider u otros asistentes sin tener que copiar prompts manualmente cada vez.
+Universal AI Skills is an open, simple and portable skill system for AI coding assistants.
+It lets you define reusable skills once and load them into different tools such as Claude Code, Codex CLI, Cursor, Gemini CLI, Windsurf, Copilot, OpenCode and other AI agents.
 
-## Qué hace
+## What this does
 
-Este repo centraliza skills, metodologías, comandos e integraciones de distintos autores en un solo lugar.
+Most AI tools use different instruction formats. One tool reads `CLAUDE.md`, another uses rules, another uses agent files, and another needs prompts copied manually.
 
-En vez de explicar lo mismo en cada proyecto, instalás este hub una vez y después cada proyecto declara qué skills necesita en `.ai/project.json`.
+Universal AI Skills solves that by giving you:
 
-Ejemplos de uso:
+- One standard skill format: `metadata.json` + `skill.md`.
+- One project config: `.ai/project.json`.
+- One local skill folder: `ai-skills/`.
+- Cross-platform installers for Windows, Linux and macOS.
+- Starter adapters for Claude, Codex, Cursor, Gemini, Windsurf and generic agents.
+- Packs for common workflows like design, fullstack, marketing and automation.
 
-- Mejorar cómo una IA programa y revisa código.
-- Cargar reglas de diseño UI/UX automáticamente.
-- Usar flujos de especificación antes de implementar features.
-- Reutilizar metodologías de QA, seguridad, revisión y shipping.
-- Integrar herramientas como WhatsApp, n8n, Docker o APIs cuando el proyecto lo necesite.
+## Quick install in any project
 
-## Por qué es interesante
+### Windows PowerShell
 
-Los agentes de IA funcionan mejor cuando tienen contexto, reglas y métodos claros. Este repo permite:
+Open your project folder and run:
 
-- instalar skills una sola vez;
-- reutilizarlas en todos tus proyectos;
-- mantener fuentes originales como submódulos Git;
-- respetar licencias y autores;
-- tener una estructura compatible con varias IA;
-- crear packs por tipo de trabajo: `core`, `design`, `fullstack`, `automation`, `marketing`, etc.
+```powershell
+irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex
+```
 
-## Instalación rápida
+### Windows CMD
+
+```cmd
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex"
+```
+
+### Linux/macOS
 
 ```bash
-unzip universal-ai-skills.zip
-cd universal-ai-skills
-chmod +x scripts/*.sh
-./scripts/bootstrap.sh
-./scripts/sync-sources.sh
+curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
 ```
 
-## Subirlo a GitHub
-
-Creá un repo vacío en GitHub, por ejemplo:
+## What gets installed in your project
 
 ```text
-github.com/TU_USUARIO/universal-ai-skills
+my-project/
+├── ai-skills/              # This repo cloned locally
+├── .ai/
+│   └── project.json        # Skills selected for this project
+├── CLAUDE.md               # Instructions for Claude Code
+├── AGENTS.md               # Generic instructions for agents
+├── CODEX.md                # Instructions for Codex-style agents
+├── GEMINI.md               # Instructions for Gemini-style agents
+├── WINDSURF.md             # Instructions for Windsurf-style agents
+└── .cursor/
+    └── rules/
+        └── universal-ai-skills.mdc
 ```
 
-Luego ejecutá:
+## How to use it with an AI
 
-```bash
-git init
-git add .
-git commit -m "Initial Universal AI Skills Hub"
-git branch -M main
-git remote add origin https://github.com/TU_USUARIO/universal-ai-skills.git
-git push -u origin main
-```
+After installing, open the project with your AI assistant and tell it:
 
-## Usarlo en todos tus proyectos
+> Read `CLAUDE.md`, `AGENTS.md` and `.ai/project.json` first. Load the skills from `./ai-skills` before coding or answering.
 
-Desde cualquier proyecto:
+The assistant should use the selected skills as project-level instructions.
 
-```bash
-/path/to/universal-ai-skills/scripts/install-project.sh .
-```
+## Skill format
 
-Eso crea:
+Each skill follows this structure:
 
 ```text
-.ai/project.json
-AGENTS.md
-CLAUDE.md
-```
-
-Después editás `.ai/project.json` y elegís las skills que ese proyecto usará.
-
-## Instalar para Claude Code
-
-```bash
-./scripts/install-claude.sh
-```
-
-Instala vínculos en:
-
-```text
-~/.claude/skills/
-```
-
-## Instalar para Codex / agentes tipo AGENTS.md
-
-```bash
-./scripts/install-codex.sh
-```
-
-Genera un adaptador simple basado en `AGENTS.md`.
-
-## Estructura
-
-```text
-universal-ai-skills/
-├── README.md
-├── registry.json              # Índice universal de skills
-├── sources.json               # Repos externos y autores
-├── AGENTS.md                  # Instrucciones para agentes compatibles
-├── CLAUDE.md                  # Instrucciones para Claude Code
-├── .ai/project.json           # Configuración de este repo
-├── adapters/                  # Adaptadores por IA
-├── external/                  # Repos externos como submódulos
-├── packs/                     # Packs de skills listas para usar
-├── scripts/                   # Instalación y sincronización
-├── skills/                    # Skills propias o normalizadas
-└── templates/                 # Plantillas para nuevas skills
-```
-
-## Fuentes externas incluidas
-
-| Fuente | Uso |
-|---|---|
-| `multica-ai/andrej-karpathy-skills` | Principios para programar mejor con IA |
-| `DietrichGebert/ponytail` | Pack de skills/comandos para agentes |
-| `vercel-labs/agent-skills` | Colección de Agent Skills |
-| `garrytan/gstack` | QA, seguridad, review, shipping y metodología |
-| `github/spec-kit` | Desarrollo guiado por especificaciones |
-| `nextlevelbuilder/ui-ux-pro-max-skill` | UI/UX, design systems, branding y frontend visual |
-| `rmyndharis/OpenWA` | Integración WhatsApp/API/n8n, no como skill pura |
-
-## Packs recomendados
-
-```text
-core        → reglas base para cualquier agente
-design      → UI/UX, accesibilidad, branding y frontend visual
-methodology → specs, QA, review, seguridad y shipping
-automation  → n8n, WhatsApp, webhooks, APIs y flujos automáticos
-fullstack   → desarrollo web completo
-marketing   → copywriting, SEO, ads, contenido y conversión
-```
-
-## Crear una nueva skill
-
-```bash
-cp -R templates/skill-template skills/mi-categoria/mi-skill
-```
-
-O usar la plantilla mínima:
-
-```text
-skills/mi-categoria/mi-skill/
-├── skill.md
+skills/category/skill-name/
 ├── metadata.json
+├── skill.md
+├── README.md
 ├── prompts/
 ├── examples/
 └── templates/
 ```
 
-## Licencias
+Example `metadata.json`:
 
-Este repo no se apropia de las skills originales. Los repos en `external/` pertenecen a sus autores y conservan sus licencias. Revisá cada licencia antes de redistribuir o modificar contenido externo.
+```json
+{
+  "id": "design.ui-ux-pro-max",
+  "name": "UI UX Pro Max",
+  "version": "1.0.0",
+  "category": "design",
+  "description": "Advanced UI/UX design skill for product interfaces and design systems.",
+  "entry": "skill.md",
+  "tags": ["ui", "ux", "design-system", "frontend"],
+  "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
+}
+```
+
+## Project config
+
+`.ai/project.json` controls which packs and skills are active:
+
+```json
+{
+  "name": "my-project",
+  "packs": ["design"],
+  "skills": ["design.ui-ux-pro-max"],
+  "assistants": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
+}
+```
+
+## External repositories
+
+External repositories are referenced in `sources.json`. They should be added as Git submodules or synced into `external/` while keeping attribution and licenses.
+
+Current planned sources:
+
+- `multica-ai/andrej-karpathy-skills`
+- `DietrichGebert/ponytail`
+- `vercel-labs/agent-skills`
+- `garrytan/gstack`
+- `github/spec-kit`
+- `nextlevelbuilder/ui-ux-pro-max-skill`
+- `rmyndharis/OpenWA`
+
+## Repository layout
+
+```text
+universal-ai-skills/
+├── apps/                  # Future docs/website apps
+├── packages/              # Future CLI, registry, adapters, SDK
+├── skills/                # Normalized skills
+├── packs/                 # Skill packs
+├── registry/              # Registry data
+├── external/              # External repos as submodules/clones
+├── scripts/               # Install and sync scripts
+├── templates/             # Reusable templates
+├── schemas/               # JSON schemas
+├── docs/                  # Documentation
+└── examples/              # Example projects
+```
+
+## Roadmap
+
+- v1: simple cross-platform installers and standard files.
+- v2: CLI command `uask`.
+- v3: adapter generation for every major AI tool.
+- v4: public catalog and community registry.
+
+## License
+
+MIT for this repository unless otherwise stated. External repositories keep their own licenses.
