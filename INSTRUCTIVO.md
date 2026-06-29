@@ -1,110 +1,93 @@
-# Instructivo Universal AI Skills
+# Instructivo rápido
 
-Este instructivo explica cómo subir, instalar y usar Universal AI Skills.
+Este instructivo es para usuarios que quieren instalar Universal AI Skills en un proyecto y empezar a usarlo con una IA.
 
-## 1. Subir esta versión al repo
+## 1. Abrir la carpeta del proyecto
 
-Tu repo local está en:
+Entrá a la carpeta donde vas a trabajar.
 
-```text
-C:\xampp\htdocs\proyectosia\universal-ai-skills
+Ejemplo en Windows:
+
+```powershell
+cd C:\xampp\htdocs\proyectosia\mi-proyecto
 ```
 
-Tu repo remoto es:
+Ejemplo en Linux/macOS:
 
-```text
-https://github.com/jepotes/universal-ai-skills.git
+```bash
+cd ~/proyectos/mi-proyecto
 ```
 
-Pasos:
+## 2. Instalar Universal AI Skills
 
-1. Descomprimir el ZIP.
-2. Copiar el contenido de `universal-ai-skills-pro` dentro de:
+### Windows
 
-```text
-C:\xampp\htdocs\proyectosia\universal-ai-skills
-```
-
-3. Ejecutar en CMD:
-
-```cmd
-cd /d C:\xampp\htdocs\proyectosia\universal-ai-skills
-git add .
-git commit -m "Upgrade Universal AI Skills professional installers"
-git push
-```
-
-## 2. Instalar en un proyecto nuevo en Windows
-
-```cmd
-mkdir C:\xampp\htdocs\proyectosia\mi-proyecto
-cd /d C:\xampp\htdocs\proyectosia\mi-proyecto
+```powershell
 powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex"
-code .
 ```
 
-## 3. Instalar en Linux
+### Linux
 
 ```bash
-mkdir mi-proyecto
-cd mi-proyecto
 curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
 ```
 
-## 4. Instalar en macOS
+### macOS
 
 ```bash
-mkdir mi-proyecto
-cd mi-proyecto
 curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
 ```
 
-## 5. Cómo usarlo con la IA
+## 3. Abrir el proyecto con tu IA
 
-Después de instalar, abrir el proyecto con Claude Code, Cursor, Codex, Gemini, Windsurf u otra IA y escribir:
+Abrí esa carpeta con:
+
+- Claude Code
+- Codex CLI
+- Cursor
+- Gemini CLI
+- Windsurf
+- Otra IA compatible
+
+## 4. Primer mensaje recomendado para la IA
 
 ```text
-Lee CLAUDE.md, AGENTS.md y .ai/project.json. Carga las skills seleccionadas desde ./ai-skills/skills antes de trabajar.
+Lee primero CLAUDE.md, AGENTS.md y .ai/project.json. Usá las skills disponibles en ./ai-skills cuando correspondan.
 ```
 
-## 6. Qué archivos crea
+## 5. Actualizar las skills
 
-```text
-mi-proyecto/
-├── ai-skills/
-├── .ai/project.json
-├── CLAUDE.md
-├── AGENTS.md
-├── CODEX.md
-├── GEMINI.md
-├── WINDSURF.md
-└── .cursor/rules/universal-ai-skills.mdc
-```
-
-## 7. Actualizar skills
-
-Windows:
+### Windows
 
 ```powershell
-.\ai-skills\scripts\update-project.ps1
+powershell -ExecutionPolicy Bypass -File scripts/update-project.ps1
 ```
 
-Linux/macOS:
+### Linux/macOS
 
 ```bash
-bash ./ai-skills/scripts/update-project.sh
+bash scripts/update-project.sh
 ```
 
-## 8. Verificar instalación
+## 6. Verificar instalación
 
-Windows:
+### Windows
 
 ```powershell
-.\ai-skills\scripts\doctor.ps1
+powershell -ExecutionPolicy Bypass -File scripts/doctor.ps1
 ```
 
-Linux/macOS:
+### Linux/macOS
 
 ```bash
-bash ./ai-skills/scripts/doctor.sh
+bash scripts/doctor.sh
 ```
+
+## Qué hace la instalación
+
+La instalación:
+
+1. Descarga el repo `https://github.com/jepotes/universal-ai-skills.git` dentro de `ai-skills/`.
+2. Crea la carpeta `.ai/`.
+3. Copia los archivos de instrucciones para distintas IA.
+4. Deja el proyecto listo para usar skills compartidas.

@@ -1,5 +1,4 @@
-# GEMINI.md
+# Gemini CLI Instructions
 
-Universal AI Skills is enabled for this project.
-
-Gemini should load `.ai/project.json`, read selected skills from `ai-skills/skills`, and apply the matching instructions while working.
+This project uses Universal AI Skills.
+Read `.ai/project.json` and load relevant skills from `./ai-skills/skills` before planning or editing.

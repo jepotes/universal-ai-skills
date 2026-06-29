@@ -1,21 +1,11 @@
-# CLAUDE.md
+# Claude Code Instructions
 
-This project uses Universal AI Skills.
-
-## Claude Code instructions
-
-Before answering or coding:
+Before working on this project:
 
 1. Read `.ai/project.json`.
-2. Load selected skills from `./ai-skills/skills` when inside an installed project.
-3. If this is the central skills repo, load from `./skills`.
-4. Use `registry.json` to resolve skill ids.
-5. Use `packs/*.json` to resolve packs.
-6. Prefer concise, practical implementation.
+2. Use skills from `./ai-skills/skills` when relevant.
+3. Use `./ai-skills/registry.json` to understand available skills and packs.
+4. Prefer project-specific context over generic assumptions.
+5. When a task matches a skill, follow that skill before coding or writing.
 
-## Active behavior
-
-- Treat skills as project-level operating instructions.
-- Use adapter files when available.
-- Do not invent unavailable skills.
-- If a skill is missing, say which one is missing and continue with the closest available generic behavior.
+If the user asks for UI/UX, product design, layouts, design systems or accessibility, load the design skill first.

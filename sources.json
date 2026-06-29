@@ -4,37 +4,9 @@
       "id": "nextlevelbuilder.ui-ux-pro-max",
       "name": "UI UX Pro Max Skill",
       "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
-      "local_path": "external/ui-ux-pro-max",
       "type": "external-skill",
       "category": "design",
-      "integration_mode": "source-reference"
-    },
-    {
-      "id": "vercel.agent-skills",
-      "name": "Vercel Agent Skills",
-      "repository": "https://github.com/vercel-labs/agent-skills.git",
-      "local_path": "external/agent-skills",
-      "type": "external-skill-pack",
-      "category": "agent-skills",
-      "integration_mode": "source-reference"
-    },
-    {
-      "id": "github.spec-kit",
-      "name": "Spec Kit",
-      "repository": "https://github.com/github/spec-kit.git",
-      "local_path": "external/spec-kit",
-      "type": "workflow-toolkit",
-      "category": "methodology",
-      "integration_mode": "source-reference"
-    },
-    {
-      "id": "garrytan.gstack",
-      "name": "GStack",
-      "repository": "https://github.com/garrytan/gstack.git",
-      "local_path": "external/gstack",
-      "type": "agent-command-pack",
-      "category": "methodology",
-      "integration_mode": "source-reference"
+      "integration": "reference"
     }
   ]
 }

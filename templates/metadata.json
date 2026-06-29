@@ -1,9 +1,9 @@
 {
   "id": "category.skill-name",
   "name": "Skill Name",
-  "category": "category",
   "version": "1.0.0",
-  "entry": "skill.md",
+  "category": "category",
+  "description": "Short description of the skill.",
   "tags": [],
-  "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
+  "entry": "skill.md"
 }

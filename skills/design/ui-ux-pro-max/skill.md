@@ -1,64 +1,33 @@
-# UI UX Pro Max Skill
+# UI UX Pro Max
 
-## Purpose
+Use this skill when the user asks for:
 
-Act as a senior UI/UX designer and frontend product designer. Improve interface quality, usability, accessibility, consistency and conversion.
-
-## When to use
-
-Use this skill when the user asks to build, improve or review:
-
-- landing pages
-- SaaS dashboards
-- web apps
-- mobile-first interfaces
-- design systems
-- component libraries
-- onboarding flows
-- checkout flows
-- pricing pages
-- forms and admin panels
+- UI design
+- UX improvements
+- Design systems
+- Landing pages
+- App screens
+- SaaS interfaces
+- Accessibility
+- Component hierarchy
+- Product interface review
 
 ## Principles
 
-Always optimize for:
-
-1. Clarity
-2. Visual hierarchy
-3. Accessibility
-4. Responsive behavior
-5. Consistency
-6. Conversion
-7. Simplicity
-8. Maintainability
+- Prioritize clarity, usability and conversion.
+- Design mobile-first unless the project requires otherwise.
+- Use accessible contrast and readable typography.
+- Create consistent spacing, hierarchy and component patterns.
+- Explain design decisions briefly and practically.
+- When coding, prefer clean, reusable components.
 
 ## Output expectations
 
-When designing or reviewing, provide:
+When designing or reviewing UI, provide:
 
-- layout recommendations
-- component structure
-- spacing rules
-- typography suggestions
-- accessibility improvements
-- responsive behavior
-- implementation notes
-
-## Frontend preferences
-
-Prefer:
-
-- semantic HTML
-- Tailwind CSS when available
-- reusable components
-- clear state handling
-- accessible labels and contrast
-- mobile-first layouts
-
-## Avoid
-
-- decorative complexity without purpose
-- inaccessible contrast
-- unclear calls to action
-- inconsistent spacing
-- overengineering
+1. Goal of the screen or flow.
+2. Main user actions.
+3. Layout structure.
+4. Component list.
+5. Accessibility notes.
+6. Implementation guidance when relevant.

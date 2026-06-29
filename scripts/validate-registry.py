@@ -1,26 +1,23 @@
-#!/usr/bin/env python3
 import json
 from pathlib import Path
 
-root = Path(__file__).resolve().parents[1]
-registry = json.loads((root / "registry.json").read_text(encoding="utf-8"))
-errors = []
+registry = Path('registry.json')
+if not registry.exists():
+    raise SystemExit('registry.json not found')
 
-for skill in registry.get("skills", []):
-    path = root / skill["path"]
-    entry = path / skill.get("entry", "skill.md")
-    metadata = path / skill.get("metadata", "metadata.json")
+data = json.loads(registry.read_text(encoding='utf-8'))
+errors = []
+for skill in data.get('skills', []):
+    path = Path(skill.get('path', ''))
     if not path.exists():
         errors.append(f"Missing skill path: {path}")
-    if not entry.exists():
-        errors.append(f"Missing skill entry: {entry}")
-    if not metadata.exists():
-        errors.append(f"Missing metadata: {metadata}")
+    if not (path / 'metadata.json').exists():
+        errors.append(f"Missing metadata.json: {path}")
+    if not (path / 'skill.md').exists():
+        errors.append(f"Missing skill.md: {path}")
 
 if errors:
-    print("Registry validation failed:")
-    for error in errors:
-        print(f"- {error}")
+    print('\n'.join(errors))
     raise SystemExit(1)
 
-print("Registry OK")
+print('Registry OK')

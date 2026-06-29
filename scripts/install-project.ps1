@@ -1,50 +1,46 @@
-param(
-    [string]$RepoUrl = "https://github.com/jepotes/universal-ai-skills.git",
-    [string]$InstallDir = "ai-skills"
-)
+$ErrorActionPreference = 'Stop'
+$RepoUrl = 'https://github.com/jepotes/universal-ai-skills.git'
+$TargetDir = 'ai-skills'
 
-$ErrorActionPreference = "Stop"
+Write-Host 'Universal AI Skills installer'
+Write-Host '-----------------------------'
 
-Write-Host ""
-Write-Host "Universal AI Skills - Project Installer" -ForegroundColor Cyan
-Write-Host "--------------------------------------" -ForegroundColor Cyan
-
-if (!(Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Host "Git is required but was not found." -ForegroundColor Red
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Error 'Git is required. Install Git and run this installer again.'
     exit 1
 }
 
-if (!(Test-Path ".ai")) {
-    New-Item -ItemType Directory -Path ".ai" | Out-Null
+if (!(Test-Path '.ai')) {
+    New-Item -ItemType Directory -Path '.ai' | Out-Null
 }
 
-if (!(Test-Path $InstallDir)) {
-    Write-Host "Cloning skills from $RepoUrl..."
-    git clone $RepoUrl $InstallDir
+if (!(Test-Path $TargetDir)) {
+    git clone $RepoUrl $TargetDir
 } else {
-    Write-Host "Updating existing skills..."
-    Push-Location $InstallDir
+    Push-Location $TargetDir
     git pull
     Pop-Location
 }
 
-Copy-Item "$InstallDir\CLAUDE.md" "CLAUDE.md" -Force
-Copy-Item "$InstallDir\AGENTS.md" "AGENTS.md" -Force
-Copy-Item "$InstallDir\CODEX.md" "CODEX.md" -Force
-Copy-Item "$InstallDir\GEMINI.md" "GEMINI.md" -Force
-Copy-Item "$InstallDir\WINDSURF.md" "WINDSURF.md" -Force
-Copy-Item "$InstallDir\.ai\project.json" ".ai\project.json" -Force
-
-if (!(Test-Path ".cursor\rules")) {
-    New-Item -ItemType Directory -Path ".cursor\rules" -Force | Out-Null
+$files = @('CLAUDE.md', 'AGENTS.md', 'CODEX.md', 'GEMINI.md', 'WINDSURF.md')
+foreach ($file in $files) {
+    $source = Join-Path $TargetDir $file
+    if (Test-Path $source) {
+        Copy-Item $source $file -Force
+    }
 }
-Copy-Item "$InstallDir\adapters\cursor\universal-ai-skills.mdc" ".cursor\rules\universal-ai-skills.mdc" -Force
 
-Write-Host ""
-Write-Host "Installation complete." -ForegroundColor Green
-Write-Host ""
-Write-Host "Next steps:"
-Write-Host "1. Open this folder with Claude Code, Cursor, Codex, Gemini, Windsurf or another AI assistant."
-Write-Host "2. Ask the AI: Read project instructions and load skills from .ai/project.json."
-Write-Host "3. To update later, run: .\ai-skills\scripts\update-project.ps1"
-Write-Host ""
+Copy-Item "$TargetDir\.ai\project.json" '.ai\project.json' -Force
+
+if (!(Test-Path 'scripts')) {
+    New-Item -ItemType Directory -Path 'scripts' | Out-Null
+}
+
+Copy-Item "$TargetDir\scripts\update-project.ps1" 'scripts\update-project.ps1' -Force
+Copy-Item "$TargetDir\scripts\doctor.ps1" 'scripts\doctor.ps1' -Force
+
+Write-Host ''
+Write-Host 'Installation completed.'
+Write-Host 'Open this folder with your AI assistant.'
+Write-Host 'Recommended first prompt:'
+Write-Host 'Read CLAUDE.md, AGENTS.md and .ai/project.json before working. Use ./ai-skills when relevant.'

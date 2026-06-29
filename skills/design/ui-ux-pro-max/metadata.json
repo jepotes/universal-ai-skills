@@ -1,10 +1,9 @@
 {
   "id": "design.ui-ux-pro-max",
   "name": "UI UX Pro Max",
-  "category": "design",
   "version": "1.0.0",
-  "entry": "skill.md",
-  "tags": ["ui", "ux", "design-system", "frontend", "accessibility", "responsive"],
-  "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"],
-  "source": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git"
+  "category": "design",
+  "description": "Guides AI assistants in UI/UX, design systems, accessibility and product interface decisions.",
+  "tags": ["ui", "ux", "design-system", "frontend", "accessibility"],
+  "entry": "skill.md"
 }

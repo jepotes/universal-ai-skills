@@ -1,5 +1,4 @@
-# WINDSURF.md
+# Windsurf Instructions
 
-Universal AI Skills is enabled for this project.
-
-Windsurf should read `.ai/project.json`, resolve the selected skills, and use them as project rules before making changes.
+Use Universal AI Skills from `./ai-skills`.
+Start by reading `.ai/project.json`, then apply relevant skills from the registry.

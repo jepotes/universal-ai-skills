@@ -1,47 +1,37 @@
-# Usage Guide
+# Usage
 
-## Basic usage
+After installation, open the project with your AI assistant.
 
-After running the installer in a project, the AI assistant should read:
-
-- `CLAUDE.md`
-- `AGENTS.md`
-- `.ai/project.json`
-- the skill files under `ai-skills/skills`
-
-## How to select skills
-
-Edit `.ai/project.json` inside your project:
-
-```json
-{
-  "skills": [
-    "design.ui-ux-pro-max"
-  ],
-  "packs": [
-    "design"
-  ]
-}
-```
-
-## How to ask the AI to use them
-
-Use this prompt:
+Recommended first prompt:
 
 ```text
-Before answering, read .ai/project.json and load all selected skills from ./ai-skills. Use those skills as project rules.
+Read CLAUDE.md, AGENTS.md and .ai/project.json before working. Use the skills from ./ai-skills when relevant.
 ```
 
-## Updating skills
+## Update
 
 Windows:
 
 ```powershell
-.\ai-skills\scripts\update-project.ps1
+powershell -ExecutionPolicy Bypass -File scripts/update-project.ps1
 ```
 
 Linux/macOS:
 
 ```bash
-bash ./ai-skills/scripts/update-project.sh
+bash scripts/update-project.sh
+```
+
+## Check
+
+Windows:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/doctor.ps1
+```
+
+Linux/macOS:
+
+```bash
+bash scripts/doctor.sh
 ```

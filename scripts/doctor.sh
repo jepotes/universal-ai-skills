@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-set -euo pipefail
-
-echo "Universal AI Skills Doctor"
-
-for item in ai-skills .ai/project.json CLAUDE.md AGENTS.md CODEX.md GEMINI.md WINDSURF.md; do
+set -e
+ok=true
+for item in ai-skills .ai/project.json CLAUDE.md AGENTS.md; do
   if [ -e "$item" ]; then
-    echo "OK   $item"
+    echo "OK  $item"
   else
     echo "MISS $item"
+    ok=false
   fi
 done
 
-if command -v git >/dev/null 2>&1; then
-  echo "OK   git"
+if [ "$ok" = true ]; then
+  echo "Universal AI Skills is ready."
 else
-  echo "MISS git"
+  echo "Some files are missing. Run the installer again."
+  exit 1
 fi
