@@ -1,0 +1,15 @@
+{
+  "name": "universal-ai-skills",
+  "version": "2.0.0",
+  "description": "Install once. Use with any AI.",
+  "bin": {
+    "uask": "packages/cli/uask.js"
+  },
+  "type": "commonjs",
+  "license": "MIT",
+  "scripts": {
+    "doctor": "node packages/cli/uask.js doctor",
+    "init": "node packages/cli/uask.js init",
+    "update": "node packages/cli/uask.js update"
+  }
+}

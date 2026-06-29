@@ -1,11 +1,13 @@
-# Claude Code Instructions
+# Universal AI Skills Instructions
 
-Before working on this project:
+This project uses Universal AI Skills.
 
-1. Read `.ai/project.json`.
-2. Use skills from `./ai-skills/skills` when relevant.
-3. Use `./ai-skills/registry.json` to understand available skills and packs.
-4. Prefer project-specific context over generic assumptions.
-5. When a task matches a skill, follow that skill before coding or writing.
+Before working:
 
-If the user asks for UI/UX, product design, layouts, design systems or accessibility, load the design skill first.
+1. Read .ai/project.json.
+2. Read ai-skills/registry.json if available.
+3. Load the active skills listed in the project configuration.
+4. Use those skills only when relevant to the user's task.
+5. Prefer simple, maintainable, production-ready solutions.
+
+If ai-skills/ exists, treat it as the local source of truth for reusable skills.

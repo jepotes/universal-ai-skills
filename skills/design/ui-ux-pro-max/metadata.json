@@ -3,7 +3,7 @@
   "name": "UI UX Pro Max",
   "version": "1.0.0",
   "category": "design",
-  "description": "Guides AI assistants in UI/UX, design systems, accessibility and product interface decisions.",
-  "tags": ["ui", "ux", "design-system", "frontend", "accessibility"],
-  "entry": "skill.md"
+  "description": "A UI/UX skill for product design, design systems, accessibility and frontend guidance.",
+  "entry": "skill.md",
+  "tags": ["ui", "ux", "design", "accessibility", "tailwind", "react", "frontend"]
 }

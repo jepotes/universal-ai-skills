@@ -1,11 +1,13 @@
-# Agent Instructions
+# Universal AI Skills Instructions
 
 This project uses Universal AI Skills.
 
-Agents should:
+Before working:
 
-1. Read `.ai/project.json`.
-2. Load enabled skills from `./ai-skills/skills`.
-3. Use `./ai-skills/registry.json` for skill metadata.
-4. Follow assistant-specific files when available: `CLAUDE.md`, `CODEX.md`, `GEMINI.md`, `WINDSURF.md`.
-5. Explain when a required skill is missing.
+1. Read .ai/project.json.
+2. Read ai-skills/registry.json if available.
+3. Load the active skills listed in the project configuration.
+4. Use those skills only when relevant to the user's task.
+5. Prefer simple, maintainable, production-ready solutions.
+
+If ai-skills/ exists, treat it as the local source of truth for reusable skills.

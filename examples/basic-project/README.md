@@ -1,3 +1,3 @@
-# Basic Project Example
+# Basic project example
 
-Install Universal AI Skills in this folder using the quick install command from the main README.
+Run the installer in this folder, then open it with your AI assistant.

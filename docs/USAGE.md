@@ -1,11 +1,11 @@
 # Usage
 
-After installation, open the project with your AI assistant.
+After installation, open your project with your AI assistant.
 
-Recommended first prompt:
+Ask:
 
 ```text
-Read CLAUDE.md, AGENTS.md and .ai/project.json before working. Use the skills from ./ai-skills when relevant.
+Read the project instructions and use the available skills.
 ```
 
 ## Update
@@ -13,25 +13,25 @@ Read CLAUDE.md, AGENTS.md and .ai/project.json before working. Use the skills fr
 Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts/update-project.ps1
+powershell -ExecutionPolicy Bypass -File ai-skills/scripts/update-project.ps1
 ```
 
 Linux/macOS:
 
 ```bash
-bash scripts/update-project.sh
+bash ai-skills/scripts/update-project.sh
 ```
 
-## Check
+## Verify
 
 Windows:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts/doctor.ps1
+powershell -ExecutionPolicy Bypass -File ai-skills/scripts/doctor.ps1
 ```
 
 Linux/macOS:
 
 ```bash
-bash scripts/doctor.sh
+bash ai-skills/scripts/doctor.sh
 ```

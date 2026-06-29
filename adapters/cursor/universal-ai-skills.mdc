@@ -1,6 +1,6 @@
 ---
-description: Universal AI Skills adapter for Cursor
+description: Universal AI Skills project rules
 alwaysApply: true
 ---
 
-Read `.ai/project.json` and use skills from `./ai-skills/skills` when relevant.
+Read `.ai/project.json` and `ai-skills/registry.json` before working. Use active skills only when relevant.

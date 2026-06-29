@@ -6,7 +6,7 @@
       "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
       "type": "external-skill",
       "category": "design",
-      "integration": "reference"
+      "local_path": "external/ui-ux-pro-max"
     }
   ]
 }

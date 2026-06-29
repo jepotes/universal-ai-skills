@@ -1,24 +1,16 @@
 {
-  "name": "Universal AI Skills Registry",
-  "version": "1.0.0",
-  "repository": "https://github.com/jepotes/universal-ai-skills.git",
+  "version": "2.0.0",
   "skills": [
     {
       "id": "design.ui-ux-pro-max",
       "name": "UI UX Pro Max",
       "category": "design",
       "path": "skills/design/ui-ux-pro-max",
-      "description": "UI/UX guidance, design systems, accessibility and product interface improvement.",
-      "status": "available",
-      "assistants": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"],
-      "tags": ["ui", "ux", "design-system", "accessibility", "frontend"]
-    }
-  ],
-  "packs": [
-    {
-      "id": "design",
-      "name": "Design Pack",
-      "skills": ["design.ui-ux-pro-max"]
+      "entry": "skill.md",
+      "metadata": "metadata.json",
+      "description": "Advanced UI/UX and design system guidance for AI assistants.",
+      "tags": ["ui", "ux", "design-system", "frontend", "product-design"],
+      "assistants": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
     }
   ]
 }

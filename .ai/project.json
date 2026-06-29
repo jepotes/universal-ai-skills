@@ -1,18 +1,7 @@
 {
-  "name": "universal-ai-skills-project",
-  "version": "1.0.0",
-  "skills": [
-    "design.ui-ux-pro-max"
-  ],
-  "packs": [
-    "design"
-  ],
-  "assistants": [
-    "claude",
-    "codex",
-    "cursor",
-    "gemini",
-    "windsurf",
-    "generic"
-  ]
+  "name": "Universal AI Skills",
+  "version": "2.0.0",
+  "active_packs": ["design"],
+  "active_skills": ["design.ui-ux-pro-max"],
+  "assistants": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
 }

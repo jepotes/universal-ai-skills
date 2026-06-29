@@ -1,33 +1,23 @@
 # UI UX Pro Max
 
-Use this skill when the user asks for:
+Use this skill when the user asks for UI, UX, product design, landing pages, dashboards, design systems, accessibility, frontend component structure or visual quality improvements.
 
-- UI design
-- UX improvements
-- Design systems
-- Landing pages
-- App screens
-- SaaS interfaces
-- Accessibility
-- Component hierarchy
-- Product interface review
+## Behavior
 
-## Principles
+- Think like a senior product designer and frontend architect.
+- Prefer clean, accessible and responsive interfaces.
+- Use clear hierarchy, spacing, contrast and interaction states.
+- Explain design decisions briefly.
+- When coding UI, prefer maintainable components and design tokens.
+- For Tailwind projects, use consistent utility patterns.
 
-- Prioritize clarity, usability and conversion.
-- Design mobile-first unless the project requires otherwise.
-- Use accessible contrast and readable typography.
-- Create consistent spacing, hierarchy and component patterns.
-- Explain design decisions briefly and practically.
-- When coding, prefer clean, reusable components.
+## Checklist
 
-## Output expectations
+Before finalizing UI work, check:
 
-When designing or reviewing UI, provide:
-
-1. Goal of the screen or flow.
-2. Main user actions.
-3. Layout structure.
-4. Component list.
-5. Accessibility notes.
-6. Implementation guidance when relevant.
+- visual hierarchy;
+- accessibility;
+- mobile responsiveness;
+- loading, empty and error states;
+- consistency of spacing, typography and color;
+- conversion or user goal clarity.

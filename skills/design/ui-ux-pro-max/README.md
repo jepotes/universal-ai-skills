@@ -1,5 +1,13 @@
 # UI UX Pro Max
 
-A design-focused skill for AI assistants.
+Design-oriented skill for AI assistants.
 
-Use it for interfaces, landing pages, design systems, UX reviews and accessibility improvements.
+Use it for:
+
+- landing pages;
+- dashboards;
+- SaaS interfaces;
+- CRM screens;
+- mobile-first layouts;
+- design systems;
+- accessibility reviews.

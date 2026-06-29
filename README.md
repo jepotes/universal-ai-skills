@@ -2,134 +2,84 @@
 
 > **Install once. Use with any AI.**
 
-Universal AI Skills is a simple, open system for sharing reusable AI skills across projects and AI assistants.
+Universal AI Skills is a simple, open system for installing reusable AI skills inside any project.
 
-Instead of rewriting the same instructions every time you start a project, install Universal AI Skills once inside the project and let your AI assistant load the right skills automatically.
+Instead of repeating the same instructions every time you start a new project, you install Universal AI Skills once per project and your AI assistant can read the same shared skill registry.
 
 ## What it does
 
 Universal AI Skills:
 
-- Downloads the skills library into your project.
-- Creates the basic AI configuration files.
-- Adds instructions for common AI assistants.
-- Keeps your skills updateable with one command.
-- Works on Windows, Linux and macOS.
-
-## Supported AI assistants
-
-| Assistant | Status |
-|---|---:|
-| Claude Code | Supported |
-| Codex CLI | Supported |
-| Cursor | Supported |
-| Gemini CLI | Supported |
-| Windsurf | Supported |
-| Generic AI agents | Supported |
+- installs a local `ai-skills/` folder inside your project;
+- creates `.ai/project.json` with the active skill configuration;
+- creates assistant files such as `CLAUDE.md`, `AGENTS.md`, `CODEX.md`, `GEMINI.md` and `WINDSURF.md`;
+- adds Cursor rules when Cursor is detected;
+- lets Claude Code, Codex CLI, Cursor, Gemini CLI, Windsurf and other assistants understand what skills are available;
+- works on Windows, Linux and macOS.
 
 ## Quick install
 
-Run the command inside the project folder where you want to use the skills.
+Run the command inside the project where you want to use the skills.
 
-### Windows PowerShell
+### Windows
 
 ```powershell
 powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex"
 ```
 
-### Linux
+### Linux / macOS
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
 ```
 
-### macOS
+## Optional CLI usage
+
+After installation, you can also use the local CLI:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
+node ai-skills/packages/cli/uask.js init
+node ai-skills/packages/cli/uask.js doctor
+node ai-skills/packages/cli/uask.js update
 ```
 
-## Alternative: clone manually
+## How to use it in a project
 
-```bash
-git clone https://github.com/jepotes/universal-ai-skills.git ai-skills
-```
+1. Create or open any project folder.
+2. Run the installer for your operating system.
+3. Open the project with Claude Code, Cursor, Codex CLI, Gemini CLI, Windsurf or another AI assistant.
+4. Tell the assistant: `Read the project instructions and use the available skills.`
 
-Then copy or reference the assistant files from the repository:
+The assistant will find the generated files and the `ai-skills/` folder.
 
-- `CLAUDE.md`
-- `AGENTS.md`
-- `CODEX.md`
-- `GEMINI.md`
-- `WINDSURF.md`
-- `.ai/project.json`
+## Supported assistants
 
-## What gets installed in your project
+| Assistant | Status |
+|---|---|
+| Claude Code | Supported |
+| Codex CLI | Supported |
+| Cursor | Supported |
+| Gemini CLI | Supported |
+| Windsurf | Supported |
+| Generic agents | Supported |
 
-After installation your project will contain:
+## Project structure after install
 
 ```text
 my-project/
-├── ai-skills/              # Universal AI Skills library
+├── ai-skills/
 ├── .ai/
-│   └── project.json        # Skills enabled for this project
-├── CLAUDE.md               # Claude Code instructions
-├── AGENTS.md               # Generic agent instructions
-├── CODEX.md                # Codex CLI instructions
-├── GEMINI.md               # Gemini CLI instructions
-└── WINDSURF.md             # Windsurf instructions
+│   └── project.json
+├── CLAUDE.md
+├── AGENTS.md
+├── CODEX.md
+├── GEMINI.md
+└── WINDSURF.md
 ```
 
-## How to use it
+## What is a skill?
 
-1. Create or open a project folder.
-2. Run the installer for your operating system.
-3. Open the folder with Claude Code, Codex CLI, Cursor, Gemini CLI, Windsurf or another AI assistant.
-4. Ask the assistant to read the project instructions if needed:
-
-```text
-Read CLAUDE.md, AGENTS.md and .ai/project.json before working. Use the skills from ./ai-skills when relevant.
-```
-
-## Update skills
-
-### Windows
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/update-project.ps1
-```
-
-### Linux / macOS
-
-```bash
-bash scripts/update-project.sh
-```
-
-## Check installation
-
-### Windows
-
-```powershell
-powershell -ExecutionPolicy Bypass -File scripts/doctor.ps1
-```
-
-### Linux / macOS
-
-```bash
-bash scripts/doctor.sh
-```
-
-## Available packs
-
-| Pack | Description |
-|---|---|
-| `design` | UI/UX, design systems, accessibility and product interface guidance. |
-
-More packs will be added over time.
-
-## Skill format
-
-Each skill follows a simple structure:
+A skill is a reusable instruction package for AI assistants.
 
 ```text
 skills/category/skill-name/
@@ -139,18 +89,12 @@ skills/category/skill-name/
 └── examples/
 ```
 
-## Project goal
+## Roadmap
 
-Universal AI Skills aims to become a simple standard for reusable AI assistant skills:
-
-- One skill format.
-- Multiple AI assistants.
-- Easy installation.
-- Easy updates.
-- Community-friendly structure.
-
-## Repository
-
-```text
-https://github.com/jepotes/universal-ai-skills.git
-```
+- `uask install fullstack`
+- `uask install marketing`
+- `uask install automation`
+- online skill catalog
+- remote registry
+- plugin marketplace
+- assistant auto-detection improvements
