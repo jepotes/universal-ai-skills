@@ -1,0 +1,170 @@
+{
+  "schema": "https://example.com/universal-ai-skills.schema.json",
+  "version": "0.1.0",
+  "name": "Universal AI Skills Registry",
+  "description": "Registry agnóstico para skills, comandos, metodologías e integraciones de agentes IA.",
+  "skills": [
+    {
+      "id": "core.karpathy-principles",
+      "name": "Karpathy Coding Principles",
+      "source_id": "andrej-karpathy-skills",
+      "source_path": "external/andrej-karpathy-skills",
+      "type": "global_guidelines",
+      "category": "core",
+      "tags": [
+        "coding",
+        "simplicity",
+        "planning",
+        "review"
+      ],
+      "adapters": [
+        "claude",
+        "codex",
+        "cursor",
+        "generic"
+      ],
+      "load_policy": "always_on_for_coding"
+    },
+    {
+      "id": "methodology.ponytail",
+      "name": "Ponytail",
+      "source_id": "ponytail",
+      "source_path": "external/ponytail",
+      "type": "agent_skill_pack",
+      "category": "methodology",
+      "tags": [
+        "senior-dev",
+        "minimalism",
+        "agent-commands"
+      ],
+      "adapters": [
+        "claude",
+        "cursor",
+        "windsurf",
+        "copilot",
+        "aider",
+        "generic"
+      ],
+      "load_policy": "on_coding_tasks"
+    },
+    {
+      "id": "vercel.agent-skills",
+      "name": "Vercel Agent Skills",
+      "source_id": "vercel-agent-skills",
+      "source_path": "external/agent-skills",
+      "type": "agent_skills_collection",
+      "category": "vercel",
+      "tags": [
+        "agent-skills",
+        "automation",
+        "web",
+        "workflow"
+      ],
+      "adapters": [
+        "claude",
+        "codex",
+        "cursor",
+        "generic"
+      ],
+      "load_policy": "selective"
+    },
+    {
+      "id": "methodology.gstack",
+      "name": "GStack",
+      "source_id": "gstack",
+      "source_path": "external/gstack",
+      "type": "methodology_skill_pack",
+      "category": "methodology",
+      "tags": [
+        "qa",
+        "security",
+        "review",
+        "shipping",
+        "product",
+        "engineering-management"
+      ],
+      "adapters": [
+        "claude",
+        "codex",
+        "cursor",
+        "opencode",
+        "generic"
+      ],
+      "load_policy": "on_project_tasks"
+    },
+    {
+      "id": "methodology.spec-kit",
+      "name": "Spec-Driven Development",
+      "source_id": "spec-kit",
+      "source_path": "external/spec-kit",
+      "type": "workflow",
+      "category": "methodology",
+      "tags": [
+        "spec",
+        "planning",
+        "requirements",
+        "tasks",
+        "implementation"
+      ],
+      "adapters": [
+        "copilot",
+        "claude",
+        "gemini",
+        "codex",
+        "generic"
+      ],
+      "load_policy": "on_new_feature_or_project"
+    },
+    {
+      "id": "integrations.openwa",
+      "name": "OpenWA WhatsApp Integration",
+      "source_id": "openwa",
+      "source_path": "external/openwa",
+      "type": "integration",
+      "category": "integrations",
+      "tags": [
+        "whatsapp",
+        "api",
+        "n8n",
+        "docker",
+        "webhooks"
+      ],
+      "adapters": [
+        "n8n",
+        "docker",
+        "api",
+        "generic"
+      ],
+      "load_policy": "only_when_whatsapp_integration_needed"
+    },
+    {
+      "id": "design.ui-ux-pro-max",
+      "name": "UI UX Pro Max",
+      "source_id": "ui-ux-pro-max",
+      "source_path": "external/ui-ux-pro-max",
+      "type": "design_skill_pack",
+      "category": "design",
+      "tags": [
+        "ui",
+        "ux",
+        "design-system",
+        "frontend",
+        "tailwind",
+        "react",
+        "nextjs",
+        "accessibility",
+        "branding"
+      ],
+      "adapters": [
+        "claude",
+        "cursor",
+        "codex",
+        "gemini",
+        "copilot",
+        "factory",
+        "generic"
+      ],
+      "load_policy": "on_ui_ux_or_frontend_tasks"
+    }
+  ]
+}

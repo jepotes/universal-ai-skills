@@ -1,0 +1,43 @@
+{
+  "name": "universal-ai-skills",
+  "registry": "./registry.json",
+  "default_skills": [
+    "core.karpathy-principles",
+    "methodology.ponytail",
+    "methodology.spec-kit"
+  ],
+  "optional_skills": [
+    "design.ui-ux-pro-max",
+    "methodology.gstack",
+    "vercel.agent-skills",
+    "integrations.openwa"
+  ],
+  "load_rules": [
+    {
+      "when": "coding_task",
+      "load": [
+        "core.karpathy-principles",
+        "methodology.ponytail"
+      ]
+    },
+    {
+      "when": "new_feature_or_new_project",
+      "load": [
+        "methodology.spec-kit",
+        "methodology.gstack"
+      ]
+    },
+    {
+      "when": "whatsapp_or_n8n_integration",
+      "load": [
+        "integrations.openwa"
+      ]
+    },
+    {
+      "when": "ui_ux_or_frontend_design",
+      "load": [
+        "design.ui-ux-pro-max"
+      ]
+    }
+  ]
+}

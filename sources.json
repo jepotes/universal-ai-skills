@@ -1,0 +1,79 @@
+{
+  "version": "0.1.0",
+  "updated_by": "manual",
+  "sources": [
+    {
+      "id": "andrej-karpathy-skills",
+      "name": "Andrej Karpathy Skills",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills.git",
+      "path": "external/andrej-karpathy-skills",
+      "kind": "guidelines",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "ponytail",
+      "name": "Ponytail",
+      "url": "https://github.com/DietrichGebert/ponytail.git",
+      "path": "external/ponytail",
+      "kind": "agent_skill_pack",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "vercel-agent-skills",
+      "name": "Vercel Agent Skills",
+      "url": "https://github.com/vercel-labs/agent-skills.git",
+      "path": "external/agent-skills",
+      "kind": "agent_skills_collection",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "gstack",
+      "name": "GStack",
+      "url": "https://github.com/garrytan/gstack.git",
+      "path": "external/gstack",
+      "kind": "methodology_skill_pack",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "spec-kit",
+      "name": "GitHub Spec Kit",
+      "url": "https://github.com/github/spec-kit.git",
+      "path": "external/spec-kit",
+      "kind": "spec_driven_development",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "openwa",
+      "name": "OpenWA",
+      "url": "https://github.com/rmyndharis/OpenWA.git",
+      "path": "external/openwa",
+      "kind": "integration",
+      "default_branch": "main",
+      "integration_mode": "git_submodule"
+    },
+    {
+      "id": "ui-ux-pro-max",
+      "name": "UI UX Pro Max Skill",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+      "path": "external/ui-ux-pro-max",
+      "kind": "design_skill_pack",
+      "default_branch": "main",
+      "integration_mode": "git_submodule",
+      "category": "design",
+      "adapters": [
+        "claude",
+        "cursor",
+        "codex",
+        "gemini",
+        "copilot",
+        "factory",
+        "generic"
+      ]
+    }
+  ]
+}

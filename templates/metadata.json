@@ -1,0 +1,10 @@
+{
+  "id": "category.skill-name",
+  "name": "Skill Name",
+  "version": "0.1.0",
+  "description": "Descripción breve.",
+  "entry": "skill.md",
+  "tags": [],
+  "adapters": ["claude", "codex", "cursor", "generic"],
+  "license": "SEE_SOURCE_LICENSE"
+}

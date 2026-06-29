@@ -1,0 +1,17 @@
+{
+  "id": "design.ui-ux-pro-max",
+  "name": "UI UX Pro Max",
+  "source_id": "ui-ux-pro-max",
+  "entry": "external/ui-ux-pro-max",
+  "tags": [
+    "ui",
+    "ux",
+    "design-system",
+    "frontend",
+    "tailwind",
+    "react",
+    "nextjs",
+    "accessibility",
+    "branding"
+  ]
+}
