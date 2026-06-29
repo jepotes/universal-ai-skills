@@ -1,48 +1,24 @@
-# Universal AI Skills — Agent Instructions
+# AGENTS.md
 
 This project uses Universal AI Skills.
 
-Before working, every AI assistant must:
+Before making changes:
 
 1. Read `.ai/project.json`.
-2. Read `registry.json` and `sources.json`.
-3. Load every skill declared in `.ai/project.json`.
-4. If a pack is declared, load all skills listed in that pack.
-5. Use the corresponding adapter guidance when available.
-6. Prefer the project-local `./ai-skills` folder when this repo is installed inside another project.
+2. Load the selected skills from `./ai-skills/skills` if this is an installed project.
+3. If working inside the Universal AI Skills repository itself, load skills from `./skills`.
+4. Follow adapter-specific instructions for your AI assistant.
+5. Prefer simple, maintainable solutions.
+6. Do not add domain-specific skills unless requested.
 
-## Skill loading order
+## Standard workflow
 
-1. Core project instructions.
-2. Packs.
-3. Individual skills.
-4. Tool-specific adapter instructions.
-5. User request.
+- Understand the goal.
+- Identify relevant skills.
+- Apply the skill instructions.
+- Make the smallest useful change.
+- Explain what changed and how to use it.
 
-## Behavior
+## Important
 
-- Do not invent skills that are not present.
-- Do not copy external repository content without respecting license and attribution.
-- When a requested capability is missing, suggest creating or adding a skill.
-- Keep responses practical and action-oriented.
-- Prefer simple installation and repeatable workflows.
-
-## Active skill roots
-
-When this repo is used directly:
-
-```text
-./skills
-./packs
-./registry.json
-./sources.json
-```
-
-When installed inside another project:
-
-```text
-./ai-skills/skills
-./ai-skills/packs
-./ai-skills/registry.json
-./ai-skills/sources.json
-```
+This repository is intended to be AI-assistant agnostic. Avoid relying on one vendor-specific format only.

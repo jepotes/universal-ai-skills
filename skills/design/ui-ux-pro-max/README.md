@@ -1,7 +1,12 @@
 # UI UX Pro Max
 
-A normalized design skill for Universal AI Skills.
+A universal design skill for frontend products, landing pages, SaaS dashboards and mobile-first web apps.
 
-Source reference: https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git
+Use it when the project needs:
 
-This local skill is a lightweight adapter entry. Keep the original repository in `external/ui-ux-pro-max` when using the full source.
+- UI/UX review
+- design systems
+- layout improvement
+- accessibility
+- frontend visual quality
+- responsive interfaces

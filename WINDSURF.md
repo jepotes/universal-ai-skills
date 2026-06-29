@@ -1,4 +1,5 @@
-# Windsurf Instructions
+# WINDSURF.md
 
-This project uses Universal AI Skills.
-Read `.ai/project.json`, `AGENTS.md`, and all selected skill files before coding.
+Universal AI Skills is enabled for this project.
+
+Windsurf should read `.ai/project.json`, resolve the selected skills, and use them as project rules before making changes.

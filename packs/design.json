@@ -1,6 +1,8 @@
 {
   "id": "design",
   "name": "Design Pack",
-  "description": "UI/UX, accessibility and design-system oriented skills.",
-  "skills": ["design.ui-ux-pro-max"]
+  "description": "UI/UX, accessibility and design-system skills for frontend projects.",
+  "skills": [
+    "design.ui-ux-pro-max"
+  ]
 }

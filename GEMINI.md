@@ -1,5 +1,5 @@
-# Gemini Instructions
+# GEMINI.md
 
-This project uses Universal AI Skills.
-Read `.ai/project.json`, then load the active packs and skills from `./ai-skills` when present.
-Follow AGENTS.md for the universal behavior contract.
+Universal AI Skills is enabled for this project.
+
+Gemini should load `.ai/project.json`, read selected skills from `ai-skills/skills`, and apply the matching instructions while working.

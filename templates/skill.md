@@ -1,13 +1,19 @@
 # Skill Name
 
+## Purpose
+
+Describe what this skill does.
+
 ## When to use
 
-Describe when this skill should be activated.
+Describe when an AI assistant should apply this skill.
 
 ## Instructions
 
-Describe how the AI should behave.
+- Add clear instructions.
+- Add constraints.
+- Add examples when possible.
 
-## Output
+## Output format
 
-Describe expected output style.
+Describe the expected output.

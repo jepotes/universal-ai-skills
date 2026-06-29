@@ -1,0 +1,14 @@
+---
+description: Universal AI Skills project rules
+alwaysApply: true
+---
+
+# Universal AI Skills for Cursor
+
+Before editing code:
+
+1. Read `.ai/project.json`.
+2. Read `AGENTS.md`.
+3. Load selected skills from `ai-skills/skills`.
+4. Apply the relevant skill instructions.
+5. Keep changes small, useful and reversible.

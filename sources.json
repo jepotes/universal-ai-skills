@@ -1,60 +1,40 @@
 {
   "sources": [
     {
-      "id": "karpathy-skills",
-      "name": "Andrej Karpathy Skills",
-      "repository": "https://github.com/multica-ai/andrej-karpathy-skills.git",
-      "target": "external/andrej-karpathy-skills",
-      "type": "external-skill-pack",
-      "enabled": true
-    },
-    {
-      "id": "ponytail",
-      "name": "Ponytail",
-      "repository": "https://github.com/DietrichGebert/ponytail.git",
-      "target": "external/ponytail",
-      "type": "external-skill-pack",
-      "enabled": true
-    },
-    {
-      "id": "agent-skills",
-      "name": "Vercel Agent Skills",
-      "repository": "https://github.com/vercel-labs/agent-skills.git",
-      "target": "external/agent-skills",
-      "type": "external-skill-pack",
-      "enabled": true
-    },
-    {
-      "id": "gstack",
-      "name": "GStack",
-      "repository": "https://github.com/garrytan/gstack.git",
-      "target": "external/gstack",
-      "type": "methodology-pack",
-      "enabled": true
-    },
-    {
-      "id": "spec-kit",
-      "name": "GitHub Spec Kit",
-      "repository": "https://github.com/github/spec-kit.git",
-      "target": "external/spec-kit",
-      "type": "spec-driven-development",
-      "enabled": true
-    },
-    {
-      "id": "ui-ux-pro-max",
+      "id": "nextlevelbuilder.ui-ux-pro-max",
       "name": "UI UX Pro Max Skill",
       "repository": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
-      "target": "external/ui-ux-pro-max",
-      "type": "design-skill",
-      "enabled": true
+      "local_path": "external/ui-ux-pro-max",
+      "type": "external-skill",
+      "category": "design",
+      "integration_mode": "source-reference"
     },
     {
-      "id": "openwa",
-      "name": "OpenWA",
-      "repository": "https://github.com/rmyndharis/OpenWA.git",
-      "target": "external/openwa",
-      "type": "integration",
-      "enabled": true
+      "id": "vercel.agent-skills",
+      "name": "Vercel Agent Skills",
+      "repository": "https://github.com/vercel-labs/agent-skills.git",
+      "local_path": "external/agent-skills",
+      "type": "external-skill-pack",
+      "category": "agent-skills",
+      "integration_mode": "source-reference"
+    },
+    {
+      "id": "github.spec-kit",
+      "name": "Spec Kit",
+      "repository": "https://github.com/github/spec-kit.git",
+      "local_path": "external/spec-kit",
+      "type": "workflow-toolkit",
+      "category": "methodology",
+      "integration_mode": "source-reference"
+    },
+    {
+      "id": "garrytan.gstack",
+      "name": "GStack",
+      "repository": "https://github.com/garrytan/gstack.git",
+      "local_path": "external/gstack",
+      "type": "agent-command-pack",
+      "category": "methodology",
+      "integration_mode": "source-reference"
     }
   ]
 }

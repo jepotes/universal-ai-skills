@@ -2,77 +2,161 @@
 
 **Install once. Use with any AI.**
 
-Universal AI Skills is an open, simple and portable skill system for AI coding assistants.
-It lets you define reusable skills once and load them into different tools such as Claude Code, Codex CLI, Cursor, Gemini CLI, Windsurf, Copilot, OpenCode and other AI agents.
+Universal AI Skills is a simple, portable skill system for AI coding assistants. It helps every new project load the same reusable instructions, workflows, adapters and skill packs across tools like Claude Code, Codex CLI, Cursor, Gemini CLI, Windsurf, OpenCode and other AI assistants.
 
-## What this does
+> One skill library. Any project. Any AI assistant.
 
-Most AI tools use different instruction formats. One tool reads `CLAUDE.md`, another uses rules, another uses agent files, and another needs prompts copied manually.
+---
 
-Universal AI Skills solves that by giving you:
+## Why this exists
 
-- One standard skill format: `metadata.json` + `skill.md`.
-- One project config: `.ai/project.json`.
-- One local skill folder: `ai-skills/`.
-- Cross-platform installers for Windows, Linux and macOS.
-- Starter adapters for Claude, Codex, Cursor, Gemini, Windsurf and generic agents.
-- Packs for common workflows like design, fullstack, marketing and automation.
+Every AI assistant has its own way of reading project instructions. Claude uses `CLAUDE.md`, many agents read `AGENTS.md`, Cursor uses rules, Codex can read project docs, and other tools use their own conventions.
 
-## Quick install in any project
+Universal AI Skills gives you one standard structure and generates the files each AI needs.
+
+---
+
+## What it does
+
+- Downloads your shared skill library into a project.
+- Creates `.ai/project.json` with the active skills.
+- Creates `CLAUDE.md`, `AGENTS.md`, `CODEX.md`, `GEMINI.md` and `WINDSURF.md`.
+- Adds adapter files for different AI assistants.
+- Supports Windows, Linux and macOS.
+- Includes update and doctor scripts.
+- Keeps each project connected to your central skills repository.
+
+---
+
+## Supported assistants
+
+| Assistant | Status | Generated files |
+|---|---:|---|
+| Claude Code | ✅ | `CLAUDE.md`, `.claude/skills` ready path |
+| Codex CLI | ✅ | `CODEX.md`, `AGENTS.md` |
+| Cursor | ✅ | `.cursor/rules` |
+| Gemini CLI | ✅ | `GEMINI.md` |
+| Windsurf | ✅ | `WINDSURF.md` |
+| Generic agents | ✅ | `AGENTS.md`, `.ai/project.json` |
+
+---
+
+## Install in a project
+
+Run one of these commands inside any project folder.
 
 ### Windows PowerShell
-
-Open your project folder and run:
 
 ```powershell
 irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex
 ```
 
-### Windows CMD
+If Windows blocks scripts:
 
-```cmd
+```powershell
 powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex"
 ```
 
-### Linux/macOS
+### Linux
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
 ```
 
-## What gets installed in your project
+### macOS
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
+```
+
+---
+
+## Quick start
+
+```bash
+mkdir my-new-project
+cd my-new-project
+curl -fsSL https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.sh | bash
+```
+
+Then open the folder with your AI assistant and say:
+
+```text
+Read the project instructions and load the skills defined in .ai/project.json before working.
+```
+
+---
+
+## Windows quick start
+
+```cmd
+mkdir C:\xampp\htdocs\proyectosia\my-new-project
+cd /d C:\xampp\htdocs\proyectosia\my-new-project
+powershell -ExecutionPolicy Bypass -Command "irm https://raw.githubusercontent.com/jepotes/universal-ai-skills/main/scripts/install-project.ps1 | iex"
+code .
+```
+
+---
+
+## Files created in each project
 
 ```text
 my-project/
-├── ai-skills/              # This repo cloned locally
+├── ai-skills/              # cloned central skill library
 ├── .ai/
-│   └── project.json        # Skills selected for this project
-├── CLAUDE.md               # Instructions for Claude Code
-├── AGENTS.md               # Generic instructions for agents
-├── CODEX.md                # Instructions for Codex-style agents
-├── GEMINI.md               # Instructions for Gemini-style agents
-├── WINDSURF.md             # Instructions for Windsurf-style agents
+│   └── project.json        # active skill config
+├── CLAUDE.md               # Claude Code instructions
+├── AGENTS.md               # generic agent instructions
+├── CODEX.md                # Codex instructions
+├── GEMINI.md               # Gemini instructions
+├── WINDSURF.md             # Windsurf instructions
 └── .cursor/
     └── rules/
         └── universal-ai-skills.mdc
 ```
 
-## How to use it with an AI
+---
 
-After installing, open the project with your AI assistant and tell it:
+## Update skills in a project
 
-> Read `CLAUDE.md`, `AGENTS.md` and `.ai/project.json` first. Load the skills from `./ai-skills` before coding or answering.
+### Windows
 
-The assistant should use the selected skills as project-level instructions.
+```powershell
+.\ai-skills\scripts\update-project.ps1
+```
+
+### Linux/macOS
+
+```bash
+bash ./ai-skills/scripts/update-project.sh
+```
+
+---
+
+## Check installation
+
+### Windows
+
+```powershell
+.\ai-skills\scripts\doctor.ps1
+```
+
+### Linux/macOS
+
+```bash
+bash ./ai-skills/scripts/doctor.sh
+```
+
+---
 
 ## Skill format
 
-Each skill follows this structure:
+Each skill uses a universal format:
 
 ```text
 skills/category/skill-name/
-├── metadata.json
 ├── skill.md
+├── metadata.json
 ├── README.md
 ├── prompts/
 ├── examples/
@@ -85,66 +169,40 @@ Example `metadata.json`:
 {
   "id": "design.ui-ux-pro-max",
   "name": "UI UX Pro Max",
-  "version": "1.0.0",
   "category": "design",
-  "description": "Advanced UI/UX design skill for product interfaces and design systems.",
+  "version": "1.0.0",
   "entry": "skill.md",
   "tags": ["ui", "ux", "design-system", "frontend"],
   "adapters": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
 }
 ```
 
-## Project config
+---
 
-`.ai/project.json` controls which packs and skills are active:
+## Recommended project prompt
 
-```json
-{
-  "name": "my-project",
-  "packs": ["design"],
-  "skills": ["design.ui-ux-pro-max"],
-  "assistants": ["claude", "codex", "cursor", "gemini", "windsurf", "generic"]
-}
-```
-
-## External repositories
-
-External repositories are referenced in `sources.json`. They should be added as Git submodules or synced into `external/` while keeping attribution and licenses.
-
-Current planned sources:
-
-- `multica-ai/andrej-karpathy-skills`
-- `DietrichGebert/ponytail`
-- `vercel-labs/agent-skills`
-- `garrytan/gstack`
-- `github/spec-kit`
-- `nextlevelbuilder/ui-ux-pro-max-skill`
-- `rmyndharis/OpenWA`
-
-## Repository layout
+After installation, tell your AI:
 
 ```text
-universal-ai-skills/
-├── apps/                  # Future docs/website apps
-├── packages/              # Future CLI, registry, adapters, SDK
-├── skills/                # Normalized skills
-├── packs/                 # Skill packs
-├── registry/              # Registry data
-├── external/              # External repos as submodules/clones
-├── scripts/               # Install and sync scripts
-├── templates/             # Reusable templates
-├── schemas/               # JSON schemas
-├── docs/                  # Documentation
-└── examples/              # Example projects
+Before coding, read CLAUDE.md, AGENTS.md and .ai/project.json. Load the matching skills from ./ai-skills/skills and use the adapters for this assistant.
 ```
+
+---
 
 ## Roadmap
 
-- v1: simple cross-platform installers and standard files.
-- v2: CLI command `uask`.
-- v3: adapter generation for every major AI tool.
-- v4: public catalog and community registry.
+- CLI command: `uask init`, `uask install`, `uask update`.
+- Marketplace/catalog website.
+- Skill validation and publishing.
+- More adapters.
+- Skill packs for fullstack, design, automation, marketing and SaaS.
 
-## License
+---
 
-MIT for this repository unless otherwise stated. External repositories keep their own licenses.
+## Repository
+
+Main repository:
+
+```text
+https://github.com/jepotes/universal-ai-skills.git
+```

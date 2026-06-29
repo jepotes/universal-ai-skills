@@ -1,40 +1,50 @@
+param(
+    [string]$RepoUrl = "https://github.com/jepotes/universal-ai-skills.git",
+    [string]$InstallDir = "ai-skills"
+)
+
 $ErrorActionPreference = "Stop"
 
-$RepoUrl = "https://github.com/jepotes/universal-ai-skills.git"
-$TargetDir = "ai-skills"
+Write-Host ""
+Write-Host "Universal AI Skills - Project Installer" -ForegroundColor Cyan
+Write-Host "--------------------------------------" -ForegroundColor Cyan
 
-Write-Host "Installing Universal AI Skills..." -ForegroundColor Cyan
-
-if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
-    Write-Error "Git is required. Install Git and run this installer again."
+if (!(Get-Command git -ErrorAction SilentlyContinue)) {
+    Write-Host "Git is required but was not found." -ForegroundColor Red
     exit 1
 }
 
-if (-not (Test-Path ".ai")) {
+if (!(Test-Path ".ai")) {
     New-Item -ItemType Directory -Path ".ai" | Out-Null
 }
 
-if (-not (Test-Path $TargetDir)) {
-    git clone $RepoUrl $TargetDir
+if (!(Test-Path $InstallDir)) {
+    Write-Host "Cloning skills from $RepoUrl..."
+    git clone $RepoUrl $InstallDir
 } else {
-    Push-Location $TargetDir
+    Write-Host "Updating existing skills..."
+    Push-Location $InstallDir
     git pull
     Pop-Location
 }
 
-Copy-Item "$TargetDir\CLAUDE.md" "CLAUDE.md" -Force
-Copy-Item "$TargetDir\AGENTS.md" "AGENTS.md" -Force
-Copy-Item "$TargetDir\CODEX.md" "CODEX.md" -Force
-Copy-Item "$TargetDir\GEMINI.md" "GEMINI.md" -Force
-Copy-Item "$TargetDir\WINDSURF.md" "WINDSURF.md" -Force
-Copy-Item "$TargetDir\.ai\project.json" ".ai\project.json" -Force
+Copy-Item "$InstallDir\CLAUDE.md" "CLAUDE.md" -Force
+Copy-Item "$InstallDir\AGENTS.md" "AGENTS.md" -Force
+Copy-Item "$InstallDir\CODEX.md" "CODEX.md" -Force
+Copy-Item "$InstallDir\GEMINI.md" "GEMINI.md" -Force
+Copy-Item "$InstallDir\WINDSURF.md" "WINDSURF.md" -Force
+Copy-Item "$InstallDir\.ai\project.json" ".ai\project.json" -Force
 
-if (-not (Test-Path ".cursor\rules")) {
+if (!(Test-Path ".cursor\rules")) {
     New-Item -ItemType Directory -Path ".cursor\rules" -Force | Out-Null
 }
-Copy-Item "$TargetDir\templates\cursor-rule.mdc" ".cursor\rules\universal-ai-skills.mdc" -Force
+Copy-Item "$InstallDir\adapters\cursor\universal-ai-skills.mdc" ".cursor\rules\universal-ai-skills.mdc" -Force
 
 Write-Host ""
-Write-Host "Universal AI Skills installed successfully." -ForegroundColor Green
-Write-Host "Open this folder with your AI assistant."
-Write-Host "The assistant should read CLAUDE.md, AGENTS.md and .ai/project.json first."
+Write-Host "Installation complete." -ForegroundColor Green
+Write-Host ""
+Write-Host "Next steps:"
+Write-Host "1. Open this folder with Claude Code, Cursor, Codex, Gemini, Windsurf or another AI assistant."
+Write-Host "2. Ask the AI: Read project instructions and load skills from .ai/project.json."
+Write-Host "3. To update later, run: .\ai-skills\scripts\update-project.ps1"
+Write-Host ""
